@@ -488,10 +488,12 @@
             "name": "Send Message",
             "url": "/",
             "description": "Open a chat with another user and send a message to them.",
+            "icons":[
             {
                 "src": "AppImages/windows11/Square44x44Logo.targetsize-96.png",
                 "sizes": "96x96"
             }
+        ]
         }
     ],
     "protocol_handlers": [
