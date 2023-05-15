@@ -6,7 +6,7 @@
   <meta src="manifest.json" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="shortcut icon" href="icon512.png" />
-  <title>Temperature converter</title>
+  <title>禤开强测试</title>
   <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="converter.css">
 </head>
@@ -35,6 +35,30 @@
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js', { scope: '/' });
     }
+  </script>
+  <script>
+    //判断浏览器是否支持Notification
+    if (window.Notification) {
+      //调用Notification 的 requestPermission方法来询问用户是否允许通知、返回一个promise
+      Notification.requestPermission()
+        .then((permission) => {
+          //当用户选择允许通知时，Notification.permission 的值为granted
+          if (Notification.permission === 'granted ') {
+            //将新建的通知存储在notification变量里面
+            //新建的通知包括标题、icon图标以及内容
+            let notification = new Notification("sir, you got a message", {
+              icon: ' ',
+              body: '新的提示'
+            });
+            //为notification添加点击事件
+            notification.addEventListener('click', function () {
+              console.log('6666');
+            })
+          }
+        });
+    }
+
+
   </script>
 </body>
 
